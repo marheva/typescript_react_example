@@ -11,7 +11,11 @@ function App() {
   }
 
   function todoDeleteHandler(id: string): void {
-    console.log('!!!!', id)
+    setTodos(prevTodos => {
+      return prevTodos.filter(element => {
+        return element.id !== id
+      })
+    })
   }
 
   return (
